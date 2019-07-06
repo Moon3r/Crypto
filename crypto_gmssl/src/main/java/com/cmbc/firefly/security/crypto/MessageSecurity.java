@@ -5,20 +5,6 @@ import java.util.Arrays;
 import static com.cmbc.firefly.security.crypto.CryptoUtils.base64Decode;
 import static com.cmbc.firefly.security.crypto.CryptoUtils.base64Encode;
 
-/**
- * <br>
- * FIREFLY
- * <p>
- * com.cmbc.firefly.security.crypto
- *
- * @author zhangguanjun
- * @version ${VERSIONNAME}
- * @date 2019-06-11 20:37
- * @api 6
- * <br>
- * CMBC-版权所有
- * <br>
- */
 public class MessageSecurity {
 
     public static byte[] messageEncrypt2Base64(byte[] data, byte[] key) throws Exception {

@@ -6,20 +6,6 @@ import com.cmbc.firefly.security.crypto_adapter.RSASignHashType;
 import java.security.PrivateKey;
 import java.security.PublicKey;
 
-/**
- * <br>
- * FIREFLY
- * <p>
- * com.cmbc.firefly.security.crypto_adapter
- *
- * @author zhangguanjun
- * @version ${VERSIONNAME}
- * @date 2019-05-15 16:07
- * @api 6
- * <br>
- * CMBC-版权所有
- * <br>
- */
 public class GmsslCryptoStrategy implements ICryptoStrategy {
     private static final String AES_ECB = "AES/ECB/PKCS5Padding";
     private static final String AES_CBC = "AES/CBC/PKCS5Padding";
