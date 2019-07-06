@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="MissingDefaultResource">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="RSA非对称加密算法："
+            android:textSize="20dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="加密模式：" />
+
+            <EditText
+                android:id="@+id/rsa_type_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="请输入加密模式（CBC、ECB）"
+                android:text="RSA/CBC/PKCS1Padding" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="公钥：" />
+
+            <EditText
+                android:id="@+id/rsa_public_key_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="请输入公钥"
+                android:text="MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDcb2/lzDDEGFhfGl6JkEcJv3Jy
+YenQkGgYkeG/IVIKlkPBhdz573yMr7jtJf9+lSyty4LuMnMfvRCbuQH4r5Hoqqz8
+4brGmMHw4qZKGdAMf0yWG3AjjEzi9RBP7Bq/LL23ji9SKtK07RuQbNiWzK0ht/Gl
+7B6yHyDXubIXe9gViQIDAQAB" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="私钥：" />
+
+            <EditText
+                android:id="@+id/rsa_private_key_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="请输入私钥"
+                android:text="MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBANxvb+XMMMQYWF8a
+XomQRwm/cnJh6dCQaBiR4b8hUgqWQ8GF3PnvfIyvuO0l/36VLK3Lgu4ycx+9EJu5
+AfivkeiqrPzhusaYwfDipkoZ0Ax/TJYbcCOMTOL1EE/sGr8svbeOL1Iq0rTtG5Bs
+2JbMrSG38aXsHrIfINe5shd72BWJAgMBAAECgYAMByib6WBf0tQ/nDi8WNsHdSLR
+ivYvIzIK5SrkOvU3Dqvzy1IbcS3in1P/3KrsRUeC1C/4v1f4y2A0nwu0fh//8Bp3
+cKoMYdighY9E6FJquyisx++cpgmVnIZW0MqqF7YR6Y7AfmIlS9AZ74oiczsREUYY
+Z57RzL+xF4w2vkgDYQJBAPpP4ipmy2oHbxQv1K1a0wQr/Ul1vtHQQuTQWh8iIKIc
+aIKK+9eRAj+kH/BVrqZZp6fO3l+OA3BYdrJq0V91zycCQQDhccEmU56yqk0/TQwT
+Kfs6vYXgjdLbQfKrK60hDZpczUp9kCVHCnRmEINpUhWVCUo3tmrvIFSDJnUgq56z
+quPPAkAvTaNfAfgU/HyoYvWdIRnZovqFxGOgQOwzU5CEa62hFR9G9D7tmPDE2B5V
+C8wqkazWUIjDpBHQTFd6FielE51nAkBCrTk6E6sxHmtAWJJErLrwEZOh6XA+hs+1
+znIi/3nzDoiEgHh1/WKVuTaUlMFrVdcMiTgxRzeXnm0v33JNozJDAkEAy9f4/JIH
+kLW0u28du+CFtBCdrj9NAJ+vVUwM/kueX2ha2k/3GQquaV99TMT9McUfo8ECGdJa
+GalQnP6683Ly5A==" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="明文：" />
+
+            <EditText
+                android:id="@+id/rsa_data_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="请输入待加密数据"
+                android:text="Crypto" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/rsa_encrypt_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="公钥加密" />
+
+            <Button
+                android:id="@+id/rsa_decrypt_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="私钥解密" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="加密后密文：" />
+
+            <TextView
+                android:id="@+id/rsa_encrypted_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="解密后明文：" />
+
+            <TextView
+                android:id="@+id/rsa_decrypted_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/rsa_sign_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="签名" />
+
+            <Button
+                android:id="@+id/rsa_verify_sign_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="验签" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="签名结果：" />
+
+            <TextView
+                android:id="@+id/rsa_sign_result_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="验签结果：" />
+
+            <TextView
+                android:id="@+id/rsa_verify_result_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="------------------------------------------------------------------------------------------" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="SM2非对称加密算法："
+            android:textSize="20dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="公钥：" />
+
+            <EditText
+                android:id="@+id/sm2_public_key_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="请输入公钥"
+                android:text="MFkwEwYHKoZIzj0CAQYIKoEcz1UBgi0DQgAE3wMoxl2U0wi5mz9Z6D5+4+//zjEkoVtJDeWL6w45P+incMnggAe0pxqkbf4Qkn8XXnYpTBQR0GJBdIlpRHmpVw==" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="私钥：" />
+
+            <EditText
+                android:id="@+id/sm2_private_key_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="请输入私钥"
+                android:text="MHcCAQEEIBfzm3ldrXqtgoGYPsDxDS4dE1yvi0tzOHVZTMcvGgwKoAoGCCqBHM9VAYItoUQDQgAE3wMoxl2U0wi5mz9Z6D5+4+//zjEkoVtJDeWL6w45P+incMnggAe0pxqkbf4Qkn8XXnYpTBQR0GJBdIlpRHmpVw==" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="明文：" />
+
+            <EditText
+                android:id="@+id/sm2_data_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="请输入待加密数据"
+                android:text="Crypto" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/sm2_encrypt_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="公钥加密" />
+
+            <Button
+                android:id="@+id/sm2_decrypt_btn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="私钥解密" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="加密后密文：" />
+
+            <TextView
+                android:id="@+id/sm2_encrypted_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="解密后明文：" />
+
+            <TextView
+                android:id="@+id/sm2_decrypted_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
