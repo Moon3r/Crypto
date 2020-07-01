@@ -1,5 +1,6 @@
 package com.cmbc.firefly.security.crypto;
 
+import android.os.Build;
 import android.util.Base64;
 
 import com.cmbc.firefly.security.crypto_adapter.RSASignHashType;
@@ -194,14 +195,26 @@ public class CryptoUtils {
     public static Key getPrivateKey(byte[] key) throws Exception {
         checkKey(key);
         PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(key);
-        Key rsaKey = KeyFactory.getInstance(CryptoConstants.RSA_ALG, "BC").generatePrivate(keySpec);
+        KeyFactory keyFactory;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            keyFactory = KeyFactory.getInstance("RSA");     //适配Android P及以后版本，否则报错NoSuchAlgorithmException
+        } else {
+            keyFactory = KeyFactory.getInstance("RSA", "BC");
+        }
+        Key rsaKey = keyFactory.generatePrivate(keySpec);
         return rsaKey;
     }
 
     public static Key getPublicKey(byte[] key) throws Exception {
         checkKey(key);
         X509EncodedKeySpec keySpec = new X509EncodedKeySpec(key);
-        Key rsaKey = KeyFactory.getInstance(CryptoConstants.RSA_ALG, "BC").generatePublic(keySpec);
+        KeyFactory keyFactory;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            keyFactory = KeyFactory.getInstance("RSA");     //适配Android P及以后版本，否则报错NoSuchAlgorithmException
+        } else {
+            keyFactory = KeyFactory.getInstance("RSA", "BC");
+        }
+        Key rsaKey = keyFactory.generatePublic(keySpec);
         return rsaKey;
     }
 
